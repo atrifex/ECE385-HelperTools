@@ -2,16 +2,16 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org24df40d">1. Introduction</a></li>
-<li><a href="#orgd533367">2. Documentation Format</a></li>
-<li><a href="#orgde25405">3. PNG To Hex Converter</a>
+<li><a href="#orge6f321e">1. Introduction</a></li>
+<li><a href="#org16f5a8f">2. Documentation Format</a></li>
+<li><a href="#org55c5199">3. PNG To Hex Converter</a>
 <ul>
-<li><a href="#orgd4fa1d3">3.1. Motivation</a></li>
-<li><a href="#org10fb41a">3.2. Contents</a></li>
-<li><a href="#orgf1439b2">3.3. How To Use: Step-by-Step Instructions</a>
+<li><a href="#org0fb8221">3.1. Motivation</a></li>
+<li><a href="#org1e79fa9">3.2. Contents</a></li>
+<li><a href="#org8da8a59">3.3. How To Use: Step-by-Step Instructions</a>
 <ul>
-<li><a href="#orga38a627">3.3.1. On-Chip Memory Python Scripts:</a></li>
-<li><a href="#orgaa5343b">3.3.2. SpriteBinaryGenerator.c:</a></li>
+<li><a href="#orge1d560c">3.3.1. On-Chip Memory Python Scripts:</a></li>
+<li><a href="#orgaafd61e">3.3.2. SpriteBinaryGenerator.c:</a></li>
 </ul>
 </li>
 </ul>
@@ -21,7 +21,7 @@
 </div>
 
 
-<a id="org24df40d"></a>
+<a id="orge6f321e"></a>
 
 # Introduction
 
@@ -31,7 +31,7 @@
 -   Currently, we only have PNG to Hex convert tool for you guys to use. In the future, we hope to develop more tools that will help you create increasing complex projects and show us what you can really do.
 
 
-<a id="orgd533367"></a>
+<a id="org16f5a8f"></a>
 
 # Documentation Format
 
@@ -42,12 +42,12 @@
     3.  How To Use: will walk you through a step by step tutorial on how to use the toolkit
 
 
-<a id="orgde25405"></a>
+<a id="org55c5199"></a>
 
 # PNG To Hex Converter
 
 
-<a id="orgd4fa1d3"></a>
+<a id="org0fb8221"></a>
 
 ## Motivation
 
@@ -58,7 +58,7 @@
     -   Since there is a limited amount of memory, this is useful when you have a lot of images or very large images.
 
 
-<a id="org10fb41a"></a>
+<a id="org1e79fa9"></a>
 
 ## Contents
 
@@ -78,12 +78,12 @@
         -   This .ram file can then be used by the control panel used in lab 6 to load the SRAM
 
 
-<a id="orgf1439b2"></a>
+<a id="org8da8a59"></a>
 
 ## How To Use: Step-by-Step Instructions
 
 
-<a id="orga38a627"></a>
+<a id="orge1d560c"></a>
 
 ### On-Chip Memory Python Scripts:
 
@@ -96,10 +96,10 @@
 7.  If they are correct, then take the `*.txt` output and place it in a location that the `ram.sv` file will have access to it.
 8.  Change the path in the `ram.sv` file to match the path of the `*.txt` file.
 
-**IMPORTANT NOTE: You will need separate `ram.sv` files for each of the separate images you have. This is because of the fact that you are initializing a given block on on-chip memory with an images data**
+**IMPORTANT NOTE: You will need separate `ram.sv` files for each of the separate images you have. This is because of the fact that you are initializing a given block on on-chip memory with an images data. The only time you can combine the outputs is if your images are off the same size. This is the only time indexing will be remotely easy.**
 
 
-<a id="orgaa5343b"></a>
+<a id="orgaafd61e"></a>
 
 ### SpriteBinaryGenerator.c:
 
