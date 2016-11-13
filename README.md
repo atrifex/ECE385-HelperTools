@@ -10,8 +10,8 @@
 <li><a href="#orgba5db3c">3.2. Contents</a></li>
 <li><a href="#orga53220f">3.3. How To Use: Step-by-Step Instructions</a>
 <ul>
-<li><a href="#orgedf9eeb">3.3.1. On-Chip Memory Python Scripts:</a></li>
-<li><a href="#org1d9a9af">3.3.2. SpriteBinaryGenerator.c:</a></li>
+<li><a href="#orgedf9eeb">3.3.1. On-Chip Memory Python Scripts</a></li>
+<li><a href="#org1d9a9af">3.3.2. SpriteBinaryGenerator.c</a></li>
 </ul>
 </li>
 <li><a href="#org900a7b3">3.4. Customizations</a>
