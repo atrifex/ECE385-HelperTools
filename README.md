@@ -2,12 +2,12 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org98b2901">1. Introduction</a></li>
-<li><a href="#org698b127">2. Documentation Format</a></li>
-<li><a href="#org90ecca3">3. PNG To Hex Converter</a>
+<li><a href="#orgc93e559">1. Introduction</a></li>
+<li><a href="#org4886a70">2. Documentation Format</a></li>
+<li><a href="#orgef7b48e">3. PNG To Hex Converter</a>
 <ul>
-<li><a href="#org1aa3794">3.1. Motivation</a></li>
-<li><a href="#org8a5366b">3.2. Contents</a></li>
+<li><a href="#orga83cec5">3.1. Motivation</a></li>
+<li><a href="#org9defdad">3.2. Contents</a></li>
 </ul>
 </li>
 </ul>
@@ -15,7 +15,7 @@
 </div>
 
 
-<a id="org98b2901"></a>
+<a id="orgc93e559"></a>
 
 # Introduction
 
@@ -25,7 +25,7 @@
 -   Currently, we only have PNG to Hex convert tool for you guys to use. In the future, we hope to develop more tools that will help you create increasing complex projects and show us what you can really do.
 
 
-<a id="org698b127"></a>
+<a id="org4886a70"></a>
 
 # Documentation Format
 
@@ -36,12 +36,12 @@
     3.  How To Use: will walk you through a step by step tutorial on how to use the toolkit
 
 
-<a id="org90ecca3"></a>
+<a id="orgef7b48e"></a>
 
 # PNG To Hex Converter
 
 
-<a id="org1aa3794"></a>
+<a id="orga83cec5"></a>
 
 ## Motivation
 
@@ -52,7 +52,19 @@
     -   Since there is a limited amount of memory, this is useful when you have a lot of images or very large images.
 
 
-<a id="org8a5366b"></a>
+<a id="org9defdad"></a>
 
 ## Contents
+
+-   On-Chip: if you want to develop on chip memory, the scripts in this folder will be useful.
+    -   Folders:
+        1.  sprite-originals - You will put your original images in this folder
+        2.  sprite-converted - This is where the output `.png` samples will be stored once you have run the scripts.
+        3.  sprite-bytes - This is where the output `.txt` files will be stored that can be used by the on-chip memory
+    -   Files:
+        1)png<sub>to</sub><sub>3</sub><sub>txt.py</sub> -
+-   SRAM: if you want to develop using SRAM, the files in this folder will be useful
+    1.  SpriteBinaryGenerator.c
+        -   This C file generates a `.ram` file.
+        -   This .ram file can then be used by the control panel used in lab 6 to load the SRAM
 
