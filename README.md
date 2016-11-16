@@ -2,22 +2,22 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orge806756">1. Introduction</a></li>
-<li><a href="#org33bff90">2. Documentation Format</a></li>
-<li><a href="#orgeed70da">3. PNG To Hex Converter</a>
+<li><a href="#org16a8872">1. Introduction</a></li>
+<li><a href="#org7e8b60b">2. Documentation Format</a></li>
+<li><a href="#org2396e3f">3. PNG To Hex Converter</a>
 <ul>
-<li><a href="#org3f39ce9">3.1. Motivation</a></li>
-<li><a href="#org6a3f424">3.2. Contents</a></li>
-<li><a href="#orge786404">3.3. Video Tutorial Link:</a></li>
-<li><a href="#org7131804">3.4. How To Use: Step-by-Step Instructions</a>
+<li><a href="#orgd4ade55">3.1. Motivation</a></li>
+<li><a href="#org5b7b376">3.2. Contents</a></li>
+<li><a href="#org9f8b3d3">3.3. Video Tutorial</a></li>
+<li><a href="#org4275d53">3.4. How To Use: Step-by-Step Instructions</a>
 <ul>
-<li><a href="#org80680c1">3.4.1. On-Chip Memory Python Scripts</a></li>
-<li><a href="#org2d75564">3.4.2. SRAM: SpriteBinaryGenerator.c</a></li>
+<li><a href="#org4139920">3.4.1. On-Chip Memory Python Scripts</a></li>
+<li><a href="#org8c275ae">3.4.2. SRAM: SpriteBinaryGenerator.c</a></li>
 </ul>
 </li>
-<li><a href="#org25fc4b4">3.5. Customizations</a>
+<li><a href="#org003a3b2">3.5. Customizations</a>
 <ul>
-<li><a href="#orgab4074e">3.5.1. Palette Based Approach</a></li>
+<li><a href="#org7893687">3.5.1. Palette Based Approach</a></li>
 </ul>
 </li>
 </ul>
@@ -27,7 +27,7 @@
 </div>
 
 
-<a id="orge806756"></a>
+<a id="org16a8872"></a>
 
 # Introduction
 
@@ -37,7 +37,7 @@
 -   Currently, we only have PNG to Hex convert tool for you guys to use. In the future, we hope to develop more tools that will help you create increasing complex projects and show us what you can really do.
 
 
-<a id="org33bff90"></a>
+<a id="org7e8b60b"></a>
 
 # Documentation Format
 
@@ -49,12 +49,12 @@
     4.  Customizations: this will cover changes to code and other customizations you can do
 
 
-<a id="orgeed70da"></a>
+<a id="org2396e3f"></a>
 
 # PNG To Hex Converter
 
 
-<a id="org3f39ce9"></a>
+<a id="orgd4ade55"></a>
 
 ## Motivation
 
@@ -65,7 +65,7 @@
     -   Since there is a limited amount of memory, this is useful when you have a lot of images or very large images.
 
 
-<a id="org6a3f424"></a>
+<a id="org5b7b376"></a>
 
 ## Contents
 
@@ -86,24 +86,24 @@
         -   This .ram file can then be used by the control panel used in lab 6 to load the SRAM
 
 
-<a id="orge786404"></a>
+<a id="org9f8b3d3"></a>
 
-## Video Tutorial Link:
+## Video Tutorial
 
 **<https://www.youtube.com/watch?v=rZiNyB5WFko&list=PL83rW1A3yldZ22Jsv_g5KU7vwXiIwbsxw>** 
 
 
-<a id="org7131804"></a>
+<a id="org4275d53"></a>
 
 ## How To Use: Step-by-Step Instructions
 
 
-<a id="org80680c1"></a>
+<a id="org4139920"></a>
 
 ### On-Chip Memory Python Scripts
 
 -   Prepping the Scripts: 
-    -   You only need to do this if you want a customized palette. This is explained below in the [Palette Based Approach](#orgab4074e) section.
+    -   You only need to do this if you want a customized palette. This is explained below in the [Palette Based Approach](#org7893687) section.
 -   Running the Scripts:
     1.  Place the image that you want to convert into the sprite-originals folder
     2.  Open up cmd or a terminal and then navigate to the directory that contains the python script that you are trying to use
@@ -117,7 +117,7 @@
 **IMPORTANT NOTE: You will need separate `ram.sv` files for each of the separate images you have. This is because of the fact that you are initializing a given block on on-chip memory with an images data. The only time you can combine the outputs is if your images are off the same size. This is the only time indexing will be remotely easy.**
 
 
-<a id="org2d75564"></a>
+<a id="org8c275ae"></a>
 
 ### SRAM: SpriteBinaryGenerator.c
 
@@ -129,12 +129,12 @@
 6.  Use `*.ram` file in your awesome project
 
 
-<a id="org25fc4b4"></a>
+<a id="org003a3b2"></a>
 
 ## Customizations
 
 
-<a id="orgab4074e"></a>
+<a id="org7893687"></a>
 
 ### Palette Based Approach
 
