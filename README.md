@@ -2,21 +2,22 @@
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org9793d97">1. Introduction</a></li>
-<li><a href="#org2d92241">2. Documentation Format</a></li>
-<li><a href="#orgb88616f">3. PNG To Hex Converter</a>
+<li><a href="#org861b67f">1. Introduction</a></li>
+<li><a href="#orgde18f70">2. Documentation Format</a></li>
+<li><a href="#orgda98848">3. PNG To Hex Converter</a>
 <ul>
-<li><a href="#org7e06a76">3.1. Motivation</a></li>
-<li><a href="#orge84bb92">3.2. Contents</a></li>
-<li><a href="#org8ab54dc">3.3. How To Use: Step-by-Step Instructions</a>
+<li><a href="#org3551911">3.1. Motivation</a></li>
+<li><a href="#orga47b68f">3.2. Contents</a></li>
+<li><a href="#org4152fb1">3.3. Video Tutorial Link: </a></li>
+<li><a href="#org62ba181">3.4. How To Use: Step-by-Step Instructions</a>
 <ul>
-<li><a href="#org8a41d1b">3.3.1. On-Chip Memory Python Scripts</a></li>
-<li><a href="#org69f4e74">3.3.2. SRAM: SpriteBinaryGenerator.c</a></li>
+<li><a href="#org2cb2cd9">3.4.1. On-Chip Memory Python Scripts</a></li>
+<li><a href="#orgbb8a468">3.4.2. SRAM: SpriteBinaryGenerator.c</a></li>
 </ul>
 </li>
-<li><a href="#org3f36c6e">3.4. Customizations</a>
+<li><a href="#org434cf62">3.5. Customizations</a>
 <ul>
-<li><a href="#org746a8d9">3.4.1. Palette Based Approach</a></li>
+<li><a href="#org10301df">3.5.1. Palette Based Approach</a></li>
 </ul>
 </li>
 </ul>
@@ -26,7 +27,7 @@
 </div>
 
 
-<a id="org9793d97"></a>
+<a id="org861b67f"></a>
 
 # Introduction
 
@@ -36,7 +37,7 @@
 -   Currently, we only have PNG to Hex convert tool for you guys to use. In the future, we hope to develop more tools that will help you create increasing complex projects and show us what you can really do.
 
 
-<a id="org2d92241"></a>
+<a id="orgde18f70"></a>
 
 # Documentation Format
 
@@ -48,12 +49,12 @@
     4.  Customizations: this will cover changes to code and other customizations you can do
 
 
-<a id="orgb88616f"></a>
+<a id="orgda98848"></a>
 
 # PNG To Hex Converter
 
 
-<a id="org7e06a76"></a>
+<a id="org3551911"></a>
 
 ## Motivation
 
@@ -64,7 +65,7 @@
     -   Since there is a limited amount of memory, this is useful when you have a lot of images or very large images.
 
 
-<a id="orge84bb92"></a>
+<a id="orga47b68f"></a>
 
 ## Contents
 
@@ -85,17 +86,22 @@
         -   This .ram file can then be used by the control panel used in lab 6 to load the SRAM
 
 
-<a id="org8ab54dc"></a>
+<a id="org4152fb1"></a>
+
+## Video Tutorial Link: <https://www.youtube.com/watch?v=rZiNyB5WFko&list=PL83rW1A3yldZ22Jsv_g5KU7vwXiIwbsxw>
+
+
+<a id="org62ba181"></a>
 
 ## How To Use: Step-by-Step Instructions
 
 
-<a id="org8a41d1b"></a>
+<a id="org2cb2cd9"></a>
 
 ### On-Chip Memory Python Scripts
 
 -   Prepping the Scripts: 
-    -   You only need to do this if you want a customized palette. This is explained below in the [Palette Based Approach](#org746a8d9) section.
+    -   You only need to do this if you want a customized palette. This is explained below in the [Palette Based Approach](#org10301df) section.
 -   Running the Scripts:
     1.  Place the image that you want to convert into the sprite-originals folder
     2.  Open up cmd or a terminal and then navigate to the directory that contains the python script that you are trying to use
@@ -109,7 +115,7 @@
 **IMPORTANT NOTE: You will need separate `ram.sv` files for each of the separate images you have. This is because of the fact that you are initializing a given block on on-chip memory with an images data. The only time you can combine the outputs is if your images are off the same size. This is the only time indexing will be remotely easy.**
 
 
-<a id="org69f4e74"></a>
+<a id="orgbb8a468"></a>
 
 ### SRAM: SpriteBinaryGenerator.c
 
@@ -121,12 +127,12 @@
 6.  Use `*.ram` file in your awesome project
 
 
-<a id="org3f36c6e"></a>
+<a id="org434cf62"></a>
 
 ## Customizations
 
 
-<a id="org746a8d9"></a>
+<a id="org10301df"></a>
 
 ### Palette Based Approach
 

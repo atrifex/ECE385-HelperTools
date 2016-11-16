@@ -8,11 +8,11 @@ module  frameRAM
 		output logic [4:0] data_Out
 );
 
-logic [<NUMBE_OF_BITS_PER_PIXEL - 1>:0] mem [0:<NUMBER_OF_PIXELS -1>]; 				// Frame buffer through the use of onchip memory
+logic [2:0] mem [0:399]; 				// Frame buffer through the use of onchip memory
 
 initial
 begin
-	 $readmemh("SpriteText/<INSERT_NAME_OF_TXT_FILE>", mem);
+	 $readmemh("sprite_bytes/tetris_I.txt", mem);
 end
 
 
