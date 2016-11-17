@@ -34,7 +34,7 @@ int main()
 	while(fgets(line, num_chars, in) != NULL)
 	{
 		value = (char)strtol(line, NULL, 10);
-		p = &value;
+		p = (int *)&value;
 		fwrite(p, 2, 1, out);
 	}
 
