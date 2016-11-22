@@ -8,7 +8,7 @@ def hex_to_rgb(num):
 def rgb_to_hex(num):
     h = str(num)
     return int(h[0:4], 16), int(('0x' + h[4:6]), 16), int(('0x' + h[6:8]), 16)
-filename = input("What's the image name? ")
+filename = str(input("What's the image name? "))
 
 im = Image.open("./sprite_originals/" + filename + ".png") #Can be many different formats.
 im = im.convert("RGBA")
