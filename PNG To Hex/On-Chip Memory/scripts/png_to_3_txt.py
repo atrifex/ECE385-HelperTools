@@ -10,15 +10,15 @@ def rgb_to_hex(num):
     return int(h[0:4], 16), int(('0x' + h[4:6]), 16), int(('0x' + h[6:8]), 16)
 filename = str(input("What's the image name? "))
 
-im = Image.open("../sprite_originals/" + filename + ".png") #Can be many different formats.
+im = Image.open("./sprite_originals/" + filename + ".png") #Can be many different formats.
 im = im.convert("RGBA")
 
 outImgR = Image.new('RGB', im.size, color='white')
-outFileR = open("../sprite_bytes/" + filename + 'R.txt', 'w')
+outFileR = open("./sprite_bytes/" + filename + 'R.txt', 'w')
 outImgG = Image.new('RGB', im.size, color='white')
-outFileG = open("../sprite_bytes/" + filename + 'G.txt', 'w')
+outFileG = open("./sprite_bytes/" + filename + 'G.txt', 'w')
 outImgB = Image.new('RGB', im.size, color='white')
-outFileB = open("../sprite_bytes/" + filename + 'B.txt', 'w')
+outFileB = open("./sprite_bytes/" + filename + 'B.txt', 'w')
 
 for y in range(im.size[1]):
     for x in range(im.size[0]):
@@ -37,6 +37,6 @@ for y in range(im.size[1]):
 outFileR.close()
 outFileB.close()
 outFileG.close()
-outImgR.save("../sprite_converted/" + filename + 'R.png')
-outImgG.save("../sprite_converted/" + filename + 'G.png')
-outImgB.save("../sprite_converted/" + filename + 'B.png')
+outImgR.save("./sprite_converted/" + filename + 'R.png')
+outImgG.save("./sprite_converted/" + filename + 'G.png')
+outImgB.save("./sprite_converted/" + filename + 'B.png')

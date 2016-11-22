@@ -14,7 +14,7 @@ palette_hex = ['0xFF0000', '0xF83800', '0xF0D0B0', '0x503000', '0xFFE0A8', '0x00
 palette_rgb = [hex_to_rgb(color) for color in palette_hex]
 
 pixel_tree = KDTree(palette_rgb)
-im = Image.open("../sprite_originals/" + filename+ ".png") #Can be many different formats.
+im = Image.open("./sprite_originals/" + filename+ ".png") #Can be many different formats.
 im = im.convert("RGBA")
 im = im.resize((new_w, new_h),Image.ANTIALIAS) # regular resize
 pix = im.load()
@@ -23,7 +23,7 @@ pix_freqs_sorted = sorted(pix_freqs.items(), key=lambda x: x[1])
 pix_freqs_sorted.reverse()
 print(pix)
 outImg = Image.new('RGB', im.size, color='white')
-outFile = open("../sprite_bytes/" + filename + '.txt', 'w')
+outFile = open("./sprite_bytes/" + filename + '.txt', 'w')
 i = 0
 for y in range(im.size[1]):
     for x in range(im.size[0]):
@@ -39,4 +39,4 @@ for y in range(im.size[1]):
             outFile.write("%x\n" % (index))
         i += 1
 outFile.close()
-outImg.save("../sprite_converted/" + filename + ".png")
+outImg.save("./sprite_converted/" + filename + ".png")

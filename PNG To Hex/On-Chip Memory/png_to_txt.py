@@ -5,11 +5,6 @@
 # NOTE: Please do not change the folder structure that has been provided or the tool will not work as intended.
 #
 
-from PIL import Image
-from collections import Counter
-from scipy.spatial import KDTree
-import numpy as np
-
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -29,10 +24,10 @@ print(bcolors.HEADER + bcolors.BOLD + bcolors.UNDERLINE + "Modes:" + bcolors.END
 print(bcolors.OKGREEN + "PNG to Txt(Normal) - " + bcolors.ENDC + bcolors.WARNING + "Mode 0" + bcolors.ENDC)
 print(bcolors.OKGREEN + "PNG to 3 Txt(Channel Separation) - " + bcolors.ENDC + bcolors.WARNING + "Mode 1" + bcolors.ENDC)
 print(bcolors.OKGREEN + "PNG to Palette with resizing - " + bcolors.ENDC + bcolors.WARNING + "Mode 2" + bcolors.ENDC)
-print(bcolors.OKGREEN + "PNG to Palette with relative resizing - " + bcolors.ENDC + bcolors.WARNING + "Mode 3" + bcolors.ENDC)
-print("The best way to figure out which mode to use is to look at the detailed notes on https://github.com/Atrifex/ECE385-HelperTools.")
+print(bcolors.OKGREEN + "PNG to Palette with relative resizing - " + bcolors.ENDC + bcolors.WARNING + "Mode 3\n" + bcolors.ENDC)
 
-print("Good luck and have fun with your projets!")
+print("The best way to figure out which mode to use is to look at the detailed notes at https://github.com/Atrifex/ECE385-HelperTools.")
+print("Good luck and have fun with your projets!\n")
 
 while(1):
     mode = int(input("Which mode of PNG to Txt would you like to use? Enter number between 0-3: "))
