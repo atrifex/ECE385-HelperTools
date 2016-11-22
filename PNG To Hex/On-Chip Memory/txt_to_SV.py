@@ -34,7 +34,7 @@ while(1):
         print("Mode still under development. Try again soon.")
         quit()
     elif mode == 1:
-        os.system("python3 ./scripts/conv_to_sv.py")
+        os.system("python ./scripts/conv_to_sv.py")
         quit()
     else:
         print("Please enter a valid number.")

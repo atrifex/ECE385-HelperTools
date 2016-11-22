@@ -17,7 +17,7 @@ class bcolors:
 
 import os
 
-welcomeString = "Welcome to PNG to Txt Convertor\nAuthor: Rishi Thakkar\n\nThis tool is developed as a collaborative effort by the ECE 385 staff.\n" +  bcolors.WARNING + "Don't forget to cite any tools that you use in your final project.\n" + bcolors.ENDC
+welcomeString = "Welcome to PNG to Txt Convertor\nAuthor: Rishi Thakkar\n\nThis tool is developed as a collaborative effort by the ECE 385 staff.\nDon't forget to cite any tools that you use in your final project.\n" +  bcolors.WARNING + "IMPORTANT NOTE: This script has been optimized to work on windows ews computers. You will need to make minor changes to get it to work elsewhere.\n" + bcolors.ENDC
 print(welcomeString)
 
 print(bcolors.HEADER + bcolors.BOLD + bcolors.UNDERLINE + "Modes:" + bcolors.ENDC)
@@ -32,16 +32,16 @@ print("Good luck and have fun with your projets!\n")
 while(1):
     mode = int(input("Which mode of PNG to Txt would you like to use? Enter number between 0-3: "))
     if mode == 0:
-        os.system("python3 ./scripts/png_to_txt.py")
+        os.system("python ./scripts/png_to_txt.py")
         break
     elif mode == 1:
-        os.system("python3 ./scripts/png_to_3_txt.py")
+        os.system("python ./scripts/png_to_3_txt.py")
         break
     elif mode == 2:
-        os.system("python3 ./scripts/png_to_palette_resizer.py")
+        os.system("python ./scripts/png_to_palette_resizer.py")
         break
     elif mode == 3:
-        os.system("python3 ./scripts/png_to_palette_relative_resizer.py")
+        os.system("python ./scripts/png_to_palette_relative_resizer.py")
         break
     else:
         print("Please enter a valid number.")
