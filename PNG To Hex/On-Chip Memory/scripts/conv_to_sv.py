@@ -56,3 +56,4 @@ for color in ["R", "G", "B"]:
 footer += "\nendmodule\n"
 with open(outfile, 'a+') as f:
     f.write(footer)
+print("SystemVerilog code generation complete! It's located at: " + outfile)
