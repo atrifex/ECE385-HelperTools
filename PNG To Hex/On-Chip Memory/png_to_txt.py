@@ -33,15 +33,15 @@ while(1):
     mode = int(input("Which mode of PNG to Txt would you like to use? Enter number between 0-3: "))
     if mode == 0:
         os.system("python3 ./scripts/png_to_txt.py")
-        quit()
+        break
     elif mode == 1:
         os.system("python3 ./scripts/png_to_3_txt.py")
-        quit()
+        break
     elif mode == 2:
         os.system("python3 ./scripts/png_to_palette_resizer.py")
-        quit()
+        break
     elif mode == 3:
         os.system("python3 ./scripts/png_to_palette_relative_resizer.py")
-        quit()
+        break
     else:
         print("Please enter a valid number.")
