@@ -43,5 +43,3 @@ for y in range(im.size[1]):
         i += 1
 outFile.close()
 outImg.save("./sprite_converted/" + filename + ".png" )
-
-

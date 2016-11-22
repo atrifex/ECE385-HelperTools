@@ -40,5 +40,3 @@ outFileG.close()
 outImgR.save("./sprite_converted/" + filename + 'R.png')
 outImgG.save("./sprite_converted/" + filename + 'G.png')
 outImgB.save("./sprite_converted/" + filename + 'B.png')
-
-
