@@ -17,7 +17,7 @@ class bcolors:
 
 import os
 
-welcomeString = "Welcome to PNG to Txt Convertor\nAuthor: Rishi Thakkar\n\nThis tool is developed as a collaborative effort of the ECE 385 staff.\n" +  bcolors.WARNING + "Don't forget to cite any tools that you use in your final project.\n" + bcolors.ENDC
+welcomeString = "Welcome to PNG to Txt Convertor\nAuthor: Rishi Thakkar\n\nThis tool is developed as a collaborative effort by the ECE 385 staff.\n" +  bcolors.WARNING + "Don't forget to cite any tools that you use in your final project.\n" + bcolors.ENDC
 print(welcomeString)
 
 print(bcolors.HEADER + bcolors.BOLD + bcolors.UNDERLINE + "Modes:" + bcolors.ENDC)
