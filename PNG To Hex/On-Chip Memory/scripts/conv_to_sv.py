@@ -10,7 +10,7 @@ spritename = str(input("What's the sprite_bytes filename? Don't include [RGB].tx
 outfile = "./sprite_bytes/" + spritename + ".sv"
 xwidth = int(input("What's the sprite's x width in pixels? ")) # These two could be read from Image().size(), for now just set them manually.
 ywidth = int(input("What's the sprite's y width in pixels? "))
-header = "module " + spritename + "(input [8:0] SpriteX, SpriteY,\n"
+header = "module " + spritename + "(input [9:0] SpriteX, SpriteY,\n"
 header += ' ' * 12 + "output [7:0] SpriteR, SpriteG, SpriteB);\n\n"
 footer = ''
 def create_sprite_table_channel(color):
