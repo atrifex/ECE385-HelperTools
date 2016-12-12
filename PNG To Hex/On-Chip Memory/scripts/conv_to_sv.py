@@ -34,17 +34,17 @@ I also apologize in advance for how messy this is. Feel free to submit a PR if y
 
 '''
 import math # needed ceiling and log functions.
-from itertools import takewhile # useful for the magic palette generation function
 from PIL import Image # can be obtained with a simple `pip install pillow`
 
 github = "https://github.com/Atrifex/ECE385-HelperTools"
 image_extension = ".png"
-parent_dir = "../" # Atrifex, this is .. since you moved the scripts into ./scripts
+parent_dir = "./" # Atrifex, this is .. since you moved the scripts into ./scripts
 bytes_dir = parent_dir + "sprite_bytes/"
 sv_dir = bytes_dir
 orig_dir = parent_dir + "sprite_originals/"
 outfile = ''
 
+compression_level = 16
 xwidth = 0
 ywidth = 0
 header = ''
@@ -117,27 +117,33 @@ def combine_channels_core(channels, dist):
     replacements = {}
     groups = []
     group = []
-    print("Before combining channels, " + str(len(channels)) + " different colors are needed.")
+    key = None
     
+    print("Before combining channels, " + str(len(channels)) + " different colors are needed.")
+
     # Iterate through channels in ascending numerical order
     for channel, count in sorted((int(k), v) for k, v in channels.items()):
         # Add new group in case that channel doesn't fit to current group
-        if group and channel - group[0][0] > 2 * dist:
-            groups.append(group)
+        if group and channel - key > dist:
+            groups.append((key, group))
             group = []
+            key = None
 
         # Add channel to group
         group.append((channel, count))
 
+        # Pick a new key in case there's none or current channel is within
+        # dist from first channel in the group
+        if key is None or channel - group[0][0] <= dist:
+            key = channel
+
     # Add last group in case it exists
     if group:
-        groups.append(group)
+        groups.append((key, group))
 
-    for group in groups:
-        # Find greatest channel within dist of first channel in group
-        key = max(takewhile(lambda x: x[0] - group[0][0] <= dist, group))
-        result[key[0]] = sum(x[1] for x in group)
-        replacements[key[0]] = [x[0] for x in group if x != key]
+    for key, group in groups:
+        result[key] = sum(x[1] for x in group)
+        replacements[key] = [x[0] for x in group if x[0] != key]
 
     print("After combining channels, " + str(len(replacements)) + " different colors are needed.")
     
@@ -242,14 +248,14 @@ def clean_raw_list(lst):
         lst[i] = int(el.strip('\n'), 16)
     return lst
     
-def generate_palette(color):
+def generate_palette(color, max_dist):
     global spritename, bytes_dir
     print("Generating palette SystemVerilog for the " + color + " channel:\n")
     fname = bytes_dir + spritename + color + ".txt"
     with open(fname) as f:
         rawlst = f.readlines()
     lst = clean_raw_list(rawlst)
-    palette = combine_channels(lst, 16)
+    palette = combine_channels(lst, max_dist)
     split_to_palette(palette, color)
 
 def create_sprite_table_channel(color):
@@ -293,13 +299,13 @@ def create_sprite_table_channel(color):
 
 def create_sv():
     # Generate valid systemverilog code.
-    global outfile, header, footer, spritename
+    global outfile, header, footer, spritename, compression_level
     with open(outfile, 'w+') as f:
         # This script overwrites the file that currently exists.
         f.write(header)
     show_section_msg("Generating SystemVerilog Code...")
     for color in ["R", "G", "B"]:
-        generate_palette(color)
+        generate_palette(color, compression_level)
         # create_sprite_table_channel
     footer += "\nendmodule\n"
     with open(outfile, 'a+') as f:
@@ -320,7 +326,7 @@ def test():
 def create_image():
     # Used to compare the original image to the image
     # after palette generation
-    global xwidth, ywidth, spritename, bytes_dir, orig_dir, image_extension
+    global xwidth, ywidth, spritename, bytes_dir, orig_dir, image_extension, compression_level
     
     ans = input("\nWould you like to see a comparison of the image before and after compressing it with a palette? (y/N) ").lower()
     if(ans != 'y'):
@@ -337,7 +343,7 @@ def create_image():
             content = f.readlines()
             #split_to_palette("R", 0)
         lines = clean_raw_list(content)
-        channels.append(combine_channels(lines, 16))
+        channels.append(combine_channels(lines, compression_level))
     #print(channels)
     imdata = list(zip(*channels))
     #print(imdata)
@@ -347,7 +353,7 @@ def create_image():
 
 def startup():
 
-    global github, orig_dir, sv_dir, image_extension, spritename, outfile, header, footer, xwidth, ywidth
+    global github, orig_dir, sv_dir, image_extension, spritename, outfile, header, footer, xwidth, ywidth, compression_level
 
     print_pad("="*80, " ", 5)
     print_pad("'conv_to_sv.py', written by Jeremy DeJournett in Fall of 2016 to help make using sprite tables less terrible.", " ", 5)
@@ -371,12 +377,24 @@ def startup():
         im = Image.open(orig_dir + spritename + image_extension)
         xwidth, ywidth = im.size
     except FileNotFoundError:
+        print("Could not automatically find the image you're talking about. If you have the output text files, enter the image dimensions manually.")
         xwidth = int(input("What's the sprite's x width in pixels? ")) # These two could be read from Image().size(), for now just set them manually.
         ywidth = int(input("What's the sprite's y width in pixels? "))
 
+    try:
+        cl = input("What compression level do you want? Typically the number of resulting colors in a palette is 256/compression_level. (" + str(compression_level) + "): ")
+        if(cl != ""):
+            cl = int(cl)
+            if(cl > 0 and cl < 256):
+                compression_level = cl
+            else:
+                print("Entered compression level is out of range of valid values (1-255). Using default.")
+    except ValueError:
+        print("What you entered was not a valid compression level. Using default.")
     ans = input("Do you want the usage details to included at the top of the output file? (Y/n) ").lower()
+    print(ans)
     if(ans == 'n'):
-        pass
+        header = ''
     else:
         header = usage()
     header += "module " + spritename + "(input [9:0] SpriteX, SpriteY,\n"
