@@ -375,7 +375,7 @@ def startup():
         ywidth = int(input("What's the sprite's y width in pixels? "))
 
     ans = input("Do you want the usage details to included at the top of the output file? (Y/n) ").lower()
-    if(ans != 'n'):
+    if(ans == 'n'):
         pass
     else:
         header = usage()
