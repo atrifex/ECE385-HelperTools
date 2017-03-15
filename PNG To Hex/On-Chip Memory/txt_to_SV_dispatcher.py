@@ -5,6 +5,8 @@
 # NOTE: Please do not change the folder structure that has been provided or the tool will not work as intended.
 #
 
+import os
+
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'
@@ -14,8 +16,6 @@ class bcolors:
     ENDC = '\033[0m'
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
-
-import os
 
 welcomeString = "Welcome to Txt to SV Convertor\nAuthor: Rishi Thakkar\n\nThis tool is developed as a collaborative effort by the ECE 385 staff.\n" +  bcolors.WARNING + "Don't forget to cite any tools that you use in your final project.\n" + bcolors.ENDC
 print(welcomeString)
@@ -38,3 +38,4 @@ while(1):
         quit()
     else:
         print("Please enter a valid number.")
+

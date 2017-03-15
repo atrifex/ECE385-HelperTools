@@ -1,3 +1,8 @@
+/*
+ * ECE385-HelperTools/PNG-To-Txt
+ * Author: Rishi Thakkar
+ *
+ */
 
 module  frameRAM
 (
@@ -8,7 +13,8 @@ module  frameRAM
 		output logic [4:0] data_Out
 );
 
-logic [2:0] mem [0:399]; 				// Frame buffer through the use of onchip memory
+// mem has width of 3 bits and a total of 400 addresses
+logic [2:0] mem [0:399];
 
 initial
 begin
