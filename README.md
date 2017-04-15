@@ -90,7 +90,7 @@
 
 ## Video Tutorial
 
-**<https://www.youtube.com/watch?v=rZiNyB5WFko&list=PL83rW1A3yldZ22Jsv_g5KU7vwXiIwbsxw>** 
+**<https://www.youtube.com/watch?v=rZiNyB5WFko&list=PL83rW1A3yldZ22Jsv_g5KU7vwXiIwbsxw>**
 
 
 <a id="org4275d53"></a>
@@ -102,7 +102,7 @@
 
 ### On-Chip Memory Python Scripts
 
--   Prepping the Scripts: 
+-   Prepping the Scripts:
     -   You only need to do this if you want a customized palette. This is explained below in the [Palette Based Approach](#org7893687) section.
 -   Running the Scripts:
     1.  Place the image that you want to convert into the sprite-originals folder
@@ -152,4 +152,10 @@
     7.  Take this list and place it within `palette_hex` as hex values in the format of 0xRGB
         -   Example `palette_hex = ['0xFF0000' , '0x047cc0', '0x14b8eb', '0x42fdff', '0x37dcff']`
     8.  No you are ready to run the script and generate the hex and ram files that can be used in memory.
+
+# FAQ
+    1. What is PIL and why is it missing?
+        - PIL is the Python Imaging Library and it is missing because you haven't downloaded it.
+        - I recommend downloading [Anaconda][AnacondaDownload] and using Spyder to edit and run the python code.
+        - "Anaconda is a program that installs Spyder and all the other necessary libraries. You download anaconda, then run spyder. Through spyder you can open the python files and it has an execute button and it's own terminal." - Drew Beeman
 
